@@ -5,7 +5,7 @@ const courtSchema = new mongoose.Schema({
   description: { type: String },
   type: { type: String, enum: ['Indoor', 'Outdoor'], default: 'Indoor' },
   pricePerHour: { type: Number, required: true },
-  image: { type: String }, // Simpan URL gambar atau nama file lokal
+  image: { type: String }, 
 }, { timestamps: true });
 
 module.exports = mongoose.model('Court', courtSchema);

@@ -12,8 +12,8 @@ const bookingSchema = new mongoose.Schema({
     required: true 
   },
   date: { type: Date, required: true },
-  startTime: { type: String, required: true }, // Format "HH:mm"
-  endTime: { type: String, required: true },   // Format "HH:mm"
+  startTime: { type: String, required: true }, 
+  endTime: { type: String, required: true },   
   totalPrice: { type: Number, required: true },
   status: { 
     type: String, 

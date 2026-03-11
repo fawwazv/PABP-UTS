@@ -56,9 +56,15 @@ exports.createBooking = async (req, res) => {
 
 exports.getMyBookings = async (req, res) => {
   try {
-    const bookings = await Booking.find({ user: req.user._id }).populate('court');
+    const userId = req.user._id || req.user.id;
+    
+    console.log("Mencari booking untuk User ID:", userId);
+    const bookings = await Booking.find({ user: userId }).populate('court');
+    console.log("Data ditemukan:", bookings.length);
+
     res.status(200).json(bookings);
   } catch (error) {
+    console.error("Error getMyBookings:", error);
     res.status(500).json({ message: "Gagal mengambil data", error: error.message });
   }
 };

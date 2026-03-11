@@ -24,7 +24,11 @@ export default function MyBookingsPage() {
             headers: { Authorization: `Bearer ${token}` }
         });
         
-        const sortedBookings = res.data.sort((a: any, b: any) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+        const sortedBookings = res.data.sort((a: any, b: any) => {
+        const dateA = a.createdAt ? new Date(a.createdAt).getTime() : 0;
+        const dateB = b.createdAt ? new Date(b.createdAt).getTime() : 0;
+        return dateB - dateA;
+        });
         setBookings(sortedBookings);
       } catch (error) {
         console.error("Gagal mengambil riwayat booking pribadi", error);
