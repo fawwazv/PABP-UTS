@@ -89,9 +89,14 @@ export default function HomePage() {
                   <Link href="/my-bookings" className="flex items-center gap-3 px-4 py-3 text-sm text-slate-200 hover:bg-white/5 transition">
                     <Receipt size={18} /> Riwayat Booking
                   </Link>
-                  <Link href="/help" className="flex items-center gap-3 px-4 py-3 text-sm text-slate-200 hover:bg-white/5 transition">
+                  <a 
+                    href="https://wa.me/6282210522135?text=Halo%20Admin%20Padel%20Hub,%20saya%20butuh%20bantuan%20terkait%20booking." 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 px-4 py-3 text-sm text-slate-200 hover:bg-white/5 transition"
+                  >
                     <Info size={18} /> Pusat Bantuan
-                  </Link>
+                  </a>
                   <div className="border-t border-white/10 mt-1 pt-1">
                     <button onClick={handleLogout} className="flex items-center gap-3 w-full px-4 py-3 text-sm text-red-400 hover:bg-red-500/10 transition font-medium text-left">
                       <LogOut size={18} /> Keluar (Logout)
