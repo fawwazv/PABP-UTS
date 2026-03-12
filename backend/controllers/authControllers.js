@@ -10,7 +10,7 @@ exports.register = async (req, res) => {
     let user = await User.findOne({ email });
     if (user) return res.status(400).json({ message: 'Email sudah terdaftar' });
 
-    // Hash password (Best Practice)
+    // Hash password 
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
